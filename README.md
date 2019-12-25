@@ -20,4 +20,4 @@ A sample of the data collected with various game configurations is shown in the 
 | d,2, d,3, c,6 | Draw | 50 | 154 | 686688 |
 
 
-MakeFile and Doxygen generated documentation is included.
+MakeFile and Doxygen generated documentation included.
