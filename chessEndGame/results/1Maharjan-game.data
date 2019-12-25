@@ -1,0 +1,5 @@
+d,1, a,8, h,1
+f,1, a,2, h,1, win
+TOTAL GAME STEPS TAKEN: 30
+Total states visited using Greedy by Black Piece: 54
+Total states visited using Alpha Beta by White Pieces: 202082

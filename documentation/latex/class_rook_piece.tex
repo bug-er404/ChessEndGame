@@ -1,0 +1,158 @@
+\section{Rook\+Piece Class Reference}
+\label{class_rook_piece}\index{Rook\+Piece@{Rook\+Piece}}
+
+
+{\ttfamily \#include $<$Rook\+Piece.\+hpp$>$}
+
+Inheritance diagram for Rook\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_rook_piece}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Rook\+Piece} (class \textbf{ Chess\+Board} $\ast$a\+\_\+board, \textbf{ Position} a\+\_\+cell, \textbf{ Piece\+Color} a\+\_\+piece\+Color)
+\begin{DoxyCompactList}\small\item\em Rook Piece Constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Rook\+Piece} ()
+\begin{DoxyCompactList}\small\item\em Rook Piece Desstructor. \end{DoxyCompactList}\item 
+int \textbf{ move\+Piece} ()
+\begin{DoxyCompactList}\small\item\em Overloaded move method to move Rook piece. \end{DoxyCompactList}\item 
+\textbf{ Piece\+Type} \textbf{ get\+Piece\+Type} ()
+\begin{DoxyCompactList}\small\item\em Return piece type. \end{DoxyCompactList}\item 
+char \textbf{ piece\+Char\+Code} ()
+\begin{DoxyCompactList}\small\item\em Return character representation of the king chess piece. \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Position} $>$ \textbf{ get\+Possible\+Moves} ()
+\begin{DoxyCompactList}\small\item\em Get possible moves for the rook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ check\+Path} (\textbf{ Position} a\+\_\+current, \textbf{ Position} a\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Method to check path of the Rook if there are obstructions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{Rook\+Piece.\+hpp}{p.}{_rook_piece_8hpp} \doxyref{Rook\+Piece}{p.}{class_rook_piece} class. Inherits from \doxyref{Chess\+Piece}{p.}{class_chess_piece} class. Chess End Game Configurations.
+
+Created by Salil Maharjan on 11/27/19. Copyright © 2019 Salil Maharjan. All rights reserved. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_rook_piece_acc4f433e6ed23cd60457caa031be51f0}} 
+\index{Rook\+Piece@{Rook\+Piece}!Rook\+Piece@{Rook\+Piece}}
+\index{Rook\+Piece@{Rook\+Piece}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{Rook\+Piece()}
+{\footnotesize\ttfamily Rook\+Piece\+::\+Rook\+Piece (\begin{DoxyParamCaption}\item[{class \textbf{ Chess\+Board} $\ast$}]{a\+\_\+board,  }\item[{\textbf{ Position}}]{a\+\_\+cell,  }\item[{\textbf{ Piece\+Color}}]{a\+\_\+piece\+Color }\end{DoxyParamCaption})}
+
+
+
+Rook Piece Constructor. 
+
+\doxyref{Rook\+Piece.\+cpp}{p.}{_rook_piece_8cpp} Implements \doxyref{Rook\+Piece.\+hpp}{p.}{_rook_piece_8hpp} class. Chess End Game
+
+Created by Salil Maharjan on 11/27/19. Copyright © 2019 Salil Maharjan. All rights reserved. Rook Piece class constructor. Constructor\+: Creates a \doxyref{Rook\+Piece}{p.}{class_rook_piece} in a\+\_\+board chess board at cell position a\+\_\+cell. Calls \doxyref{Chess\+Piece}{p.}{class_chess_piece} constructor to construct a chesspiece. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board} & Chess\+Board$\ast$ \doxyref{Chess\+Board}{p.}{class_chess_board} where the game is being played. \\
+\hline
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x,y) position to place king piece. \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_rook_piece_a5907779639688e58f4b50eb4eca4ebb1}} 
+\index{Rook\+Piece@{Rook\+Piece}!````~Rook\+Piece@{$\sim$\+Rook\+Piece}}
+\index{````~Rook\+Piece@{$\sim$\+Rook\+Piece}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{$\sim$\+Rook\+Piece()}
+{\footnotesize\ttfamily Rook\+Piece\+::$\sim$\+Rook\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rook Piece Desstructor. 
+
+Rook Piece class destructor. Destructor\+: Destroys the rook piece from the board. 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_rook_piece_ae4272efa6dc5a3ee6ffea5af987a65f1}} 
+\index{Rook\+Piece@{Rook\+Piece}!check\+Path@{check\+Path}}
+\index{check\+Path@{check\+Path}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{check\+Path()}
+{\footnotesize\ttfamily bool Rook\+Piece\+::check\+Path (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+current,  }\item[{\textbf{ Position}}]{a\+\_\+pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method to check path of the Rook if there are obstructions. 
+
+Method to check path of the Rook if there are obstructions. Returns a bool depending on if there are obstructions on the path of the Rook or not. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+current} & \doxyref{Position}{p.}{struct_position} Current position of the Rook \\
+\hline
+{\em a\+\_\+pos} & \doxyref{Position}{p.}{struct_position} The rook\textquotesingle{}s destination position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if there are no obstructions and the rook can move, false otherwise. 
+\end{DoxyReturn}
+\mbox{\label{class_rook_piece_addfa6bc37715d63b05e96f5fbd5a26ab}} 
+\index{Rook\+Piece@{Rook\+Piece}!get\+Piece\+Type@{get\+Piece\+Type}}
+\index{get\+Piece\+Type@{get\+Piece\+Type}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{get\+Piece\+Type()}
+{\footnotesize\ttfamily \textbf{ Piece\+Type} Rook\+Piece\+::get\+Piece\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return piece type. 
+
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_a3a0ae30c47fe6be0ed12859451a1e3f5}.
+
+\mbox{\label{class_rook_piece_afffc17359851023ef3db115c9ff50680}} 
+\index{Rook\+Piece@{Rook\+Piece}!get\+Possible\+Moves@{get\+Possible\+Moves}}
+\index{get\+Possible\+Moves@{get\+Possible\+Moves}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{get\+Possible\+Moves()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Position} $>$ Rook\+Piece\+::get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get possible moves for the rook. 
+
+Method to get possible moves for a Rook Piece. \begin{DoxyReturn}{Returns}
+vector$<$\+Position$>$ Array of possible positions the Rook piece can make a valid move to. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_a62e65eef509393e96e6122fd63e2915b}.
+
+\mbox{\label{class_rook_piece_a083ee01e8799014bcf7d36968b008386}} 
+\index{Rook\+Piece@{Rook\+Piece}!move\+Piece@{move\+Piece}}
+\index{move\+Piece@{move\+Piece}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{move\+Piece()}
+{\footnotesize\ttfamily int Rook\+Piece\+::move\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overloaded move method to move Rook piece. 
+
+Move method for Rook Piece. Overloaded move method to move Rook piece. 
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_aeed547e002595651caf20655a384d6e5}.
+
+\mbox{\label{class_rook_piece_a163839b3da6d698e77267f18f72a2383}} 
+\index{Rook\+Piece@{Rook\+Piece}!piece\+Char\+Code@{piece\+Char\+Code}}
+\index{piece\+Char\+Code@{piece\+Char\+Code}!Rook\+Piece@{Rook\+Piece}}
+\subsubsection{piece\+Char\+Code()}
+{\footnotesize\ttfamily char Rook\+Piece\+::piece\+Char\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return character representation of the king chess piece. 
+
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_ae07add53743a1fc66cdc92373d2dfe25}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+chess\+End\+Game/\textbf{ Rook\+Piece.\+hpp}\item 
+chess\+End\+Game/\textbf{ Rook\+Piece.\+cpp}\end{DoxyCompactItemize}

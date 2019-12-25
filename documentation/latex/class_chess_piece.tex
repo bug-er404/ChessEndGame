@@ -1,0 +1,245 @@
+\section{Chess\+Piece Class Reference}
+\label{class_chess_piece}\index{Chess\+Piece@{Chess\+Piece}}
+
+
+{\ttfamily \#include $<$Chess\+Piece.\+hpp$>$}
+
+Inheritance diagram for Chess\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_chess_piece}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Chess\+Piece} (class \textbf{ Chess\+Board} $\ast$a\+\_\+board, \textbf{ Position} a\+\_\+cell, \textbf{ Piece\+Color} a\+\_\+piece\+Color)
+\begin{DoxyCompactList}\small\item\em \doxyref{Chess\+Piece}{p.}{class_chess_piece} constructor -\/ Creates a chess piece in the chess board at passed position. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+Chess\+Piece} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{Chess\+Piece}{p.}{class_chess_piece} destructor. \end{DoxyCompactList}\item 
+virtual int \textbf{ move\+Piece} ()=0
+\begin{DoxyCompactList}\small\item\em Moves the chess piece on the board. \end{DoxyCompactList}\item 
+virtual \textbf{ Piece\+Type} \textbf{ get\+Piece\+Type} ()=0
+\item 
+\textbf{ Position} \textbf{ get\+Piece\+Position} ()
+\begin{DoxyCompactList}\small\item\em Get Piece \doxyref{Position}{p.}{struct_position}. \end{DoxyCompactList}\item 
+virtual char \textbf{ piece\+Char\+Code} ()=0
+\begin{DoxyCompactList}\small\item\em Get character representation of the chess piece. \end{DoxyCompactList}\item 
+char \textbf{ piece\+Color\+Code} ()
+\begin{DoxyCompactList}\small\item\em Get color representation of the chess piece. \end{DoxyCompactList}\item 
+bool \textbf{ check\+Cell} (\textbf{ Position} a\+\_\+cell)
+\begin{DoxyCompactList}\small\item\em Validate cell is on the board. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \textbf{ Position} $>$ \textbf{ get\+Possible\+Moves} ()=0
+\begin{DoxyCompactList}\small\item\em Get possible moves for the chess piece. \end{DoxyCompactList}\item 
+int \textbf{ get\+Maximizing\+State} (\textbf{ Position} \&a\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Gets the maximizing state for the chess piece. \end{DoxyCompactList}\item 
+void \textbf{ update\+Piece\+Cell} (\textbf{ Position} a\+\_\+cell)
+\begin{DoxyCompactList}\small\item\em Moves chess piece to new position (x, y) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Position} \textbf{ m\+\_\+piece\+Position}
+\begin{DoxyCompactList}\small\item\em Variable that holds the position of a chess piece. \end{DoxyCompactList}\item 
+\textbf{ Chess\+Board} $\ast$ \textbf{ m\+\_\+board}
+\begin{DoxyCompactList}\small\item\em Pointer to the chess board. \end{DoxyCompactList}\item 
+\textbf{ Piece\+Color} \textbf{ m\+\_\+piece\+Color}
+\begin{DoxyCompactList}\small\item\em Variable that holds the color of the chess piece. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_chess_piece_a2d766e242cffc9d4dec12ba4be5eb871}} 
+\index{Chess\+Piece@{Chess\+Piece}!Chess\+Piece@{Chess\+Piece}}
+\index{Chess\+Piece@{Chess\+Piece}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{Chess\+Piece()}
+{\footnotesize\ttfamily Chess\+Piece\+::\+Chess\+Piece (\begin{DoxyParamCaption}\item[{class \textbf{ Chess\+Board} $\ast$}]{a\+\_\+board,  }\item[{\textbf{ Position}}]{a\+\_\+cell,  }\item[{\textbf{ Piece\+Color}}]{a\+\_\+piece\+Color }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Chess\+Piece}{p.}{class_chess_piece} constructor -\/ Creates a chess piece in the chess board at passed position. 
+
+\doxyref{Chess\+Piece.\+cpp}{p.}{_chess_piece_8cpp} Implementation of \doxyref{Chess\+Piece.\+hpp}{p.}{_chess_piece_8hpp} class.
+
+Created by Salil D. Maharjan on 11/27/19. Copyright © 2019 Salil Maharjan. All rights reserved. Constructor for \doxyref{Chess\+Piece}{p.}{class_chess_piece} Class. Constructor\+: Creates a chess piece on the board at position (x,y) 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board} & Chess\+Board$\ast$ Board where the game is being played. \\
+\hline
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x,y) position in the board. \\
+\hline
+{\em a\+\_\+piece\+Color} & Piece\+Color Chess Piece Color. \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chess_piece_a55fa05bb289888ca0ff5895a6f155960}} 
+\index{Chess\+Piece@{Chess\+Piece}!````~Chess\+Piece@{$\sim$\+Chess\+Piece}}
+\index{````~Chess\+Piece@{$\sim$\+Chess\+Piece}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{$\sim$\+Chess\+Piece()}
+{\footnotesize\ttfamily Chess\+Piece\+::$\sim$\+Chess\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxyref{Chess\+Piece}{p.}{class_chess_piece} destructor. 
+
+Empty Destructor for \doxyref{Chess\+Piece}{p.}{class_chess_piece} class. 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_chess_piece_a439fb5b59088169611c415b33d6f3510}} 
+\index{Chess\+Piece@{Chess\+Piece}!check\+Cell@{check\+Cell}}
+\index{check\+Cell@{check\+Cell}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{check\+Cell()}
+{\footnotesize\ttfamily bool Chess\+Piece\+::check\+Cell (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+cell }\end{DoxyParamCaption})}
+
+
+
+Validate cell is on the board. 
+
+Method to check if cell is in range. Checks if a position is in the board or out of range. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x,y) position in the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool if \doxyref{Position}{p.}{struct_position} (x,y) is in the board. 
+\end{DoxyReturn}
+\mbox{\label{class_chess_piece_af8037e1f83f287884586588948bc478e}} 
+\index{Chess\+Piece@{Chess\+Piece}!get\+Maximizing\+State@{get\+Maximizing\+State}}
+\index{get\+Maximizing\+State@{get\+Maximizing\+State}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{get\+Maximizing\+State()}
+{\footnotesize\ttfamily int Chess\+Piece\+::get\+Maximizing\+State (\begin{DoxyParamCaption}\item[{\textbf{ Position} \&}]{a\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Gets the maximizing state for the chess piece. 
+
+Method to get the maximizing state for a chess piece. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+pos} & \doxyref{Position}{p.}{struct_position} (x,y) position on the board passeed by reference. The position is updated with the maximizing position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int the maximum score the maximizing state has. 
+\end{DoxyReturn}
+\mbox{\label{class_chess_piece_a79c1c3c781f2c524c055d39daf923b60}} 
+\index{Chess\+Piece@{Chess\+Piece}!get\+Piece\+Position@{get\+Piece\+Position}}
+\index{get\+Piece\+Position@{get\+Piece\+Position}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{get\+Piece\+Position()}
+{\footnotesize\ttfamily \textbf{ Position} Chess\+Piece\+::get\+Piece\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get Piece \doxyref{Position}{p.}{struct_position}. 
+
+\mbox{\label{class_chess_piece_a3a0ae30c47fe6be0ed12859451a1e3f5}} 
+\index{Chess\+Piece@{Chess\+Piece}!get\+Piece\+Type@{get\+Piece\+Type}}
+\index{get\+Piece\+Type@{get\+Piece\+Type}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{get\+Piece\+Type()}
+{\footnotesize\ttfamily virtual \textbf{ Piece\+Type} Chess\+Piece\+::get\+Piece\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Acccessors\+: Get Piece Type 
+
+Implemented in \textbf{ King\+Piece} \doxyref{}{p.}{class_king_piece_adf72b70a58939abb97041bf371184d59}, and \textbf{ Rook\+Piece} \doxyref{}{p.}{class_rook_piece_addfa6bc37715d63b05e96f5fbd5a26ab}.
+
+\mbox{\label{class_chess_piece_a62e65eef509393e96e6122fd63e2915b}} 
+\index{Chess\+Piece@{Chess\+Piece}!get\+Possible\+Moves@{get\+Possible\+Moves}}
+\index{get\+Possible\+Moves@{get\+Possible\+Moves}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{get\+Possible\+Moves()}
+{\footnotesize\ttfamily virtual std\+::vector$<$\textbf{ Position}$>$ Chess\+Piece\+::get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get possible moves for the chess piece. 
+
+
+
+Implemented in \textbf{ King\+Piece} \doxyref{}{p.}{class_king_piece_ab1fc242e9d0c3bcace67a6839bf68cbd}, and \textbf{ Rook\+Piece} \doxyref{}{p.}{class_rook_piece_afffc17359851023ef3db115c9ff50680}.
+
+\mbox{\label{class_chess_piece_aeed547e002595651caf20655a384d6e5}} 
+\index{Chess\+Piece@{Chess\+Piece}!move\+Piece@{move\+Piece}}
+\index{move\+Piece@{move\+Piece}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{move\+Piece()}
+{\footnotesize\ttfamily virtual int Chess\+Piece\+::move\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Moves the chess piece on the board. 
+
+
+
+Implemented in \textbf{ King\+Piece} \doxyref{}{p.}{class_king_piece_a7c09258f545c61ad5323a14794f9eb66}, and \textbf{ Rook\+Piece} \doxyref{}{p.}{class_rook_piece_a083ee01e8799014bcf7d36968b008386}.
+
+\mbox{\label{class_chess_piece_ae07add53743a1fc66cdc92373d2dfe25}} 
+\index{Chess\+Piece@{Chess\+Piece}!piece\+Char\+Code@{piece\+Char\+Code}}
+\index{piece\+Char\+Code@{piece\+Char\+Code}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{piece\+Char\+Code()}
+{\footnotesize\ttfamily virtual char Chess\+Piece\+::piece\+Char\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get character representation of the chess piece. 
+
+
+
+Implemented in \textbf{ King\+Piece} \doxyref{}{p.}{class_king_piece_af2bd66f1e7b5b8ab6ac29f930ea5e1fa}, and \textbf{ Rook\+Piece} \doxyref{}{p.}{class_rook_piece_a163839b3da6d698e77267f18f72a2383}.
+
+\mbox{\label{class_chess_piece_a9d40e1c6fed39cefabbfe68e3adcba4f}} 
+\index{Chess\+Piece@{Chess\+Piece}!piece\+Color\+Code@{piece\+Color\+Code}}
+\index{piece\+Color\+Code@{piece\+Color\+Code}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{piece\+Color\+Code()}
+{\footnotesize\ttfamily char Chess\+Piece\+::piece\+Color\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get color representation of the chess piece. 
+
+\mbox{\label{class_chess_piece_a460e016855263c67c00e133b95db583f}} 
+\index{Chess\+Piece@{Chess\+Piece}!update\+Piece\+Cell@{update\+Piece\+Cell}}
+\index{update\+Piece\+Cell@{update\+Piece\+Cell}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{update\+Piece\+Cell()}
+{\footnotesize\ttfamily void Chess\+Piece\+::update\+Piece\+Cell (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+cell }\end{DoxyParamCaption})}
+
+
+
+Moves chess piece to new position (x, y) 
+
+\doxyref{Chess\+Piece}{p.}{class_chess_piece} move method on the board. Moves chess piece from (x,y) to new position (a\+\_\+x, a\+\_\+y). 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x,y) position in the board. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_chess_piece_aa5e30bb3707b238f8446dc6c2075675a}} 
+\index{Chess\+Piece@{Chess\+Piece}!m\+\_\+board@{m\+\_\+board}}
+\index{m\+\_\+board@{m\+\_\+board}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{m\+\_\+board}
+{\footnotesize\ttfamily \textbf{ Chess\+Board}$\ast$ Chess\+Piece\+::m\+\_\+board\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the chess board. 
+
+\mbox{\label{class_chess_piece_afd9cdb7886caaba4da6b1febea14a1fb}} 
+\index{Chess\+Piece@{Chess\+Piece}!m\+\_\+piece\+Color@{m\+\_\+piece\+Color}}
+\index{m\+\_\+piece\+Color@{m\+\_\+piece\+Color}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{m\+\_\+piece\+Color}
+{\footnotesize\ttfamily \textbf{ Piece\+Color} Chess\+Piece\+::m\+\_\+piece\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Variable that holds the color of the chess piece. 
+
+\mbox{\label{class_chess_piece_a6a7b2eb803e6013fadb93b053ee7ec40}} 
+\index{Chess\+Piece@{Chess\+Piece}!m\+\_\+piece\+Position@{m\+\_\+piece\+Position}}
+\index{m\+\_\+piece\+Position@{m\+\_\+piece\+Position}!Chess\+Piece@{Chess\+Piece}}
+\subsubsection{m\+\_\+piece\+Position}
+{\footnotesize\ttfamily \textbf{ Position} Chess\+Piece\+::m\+\_\+piece\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Variable that holds the position of a chess piece. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+chess\+End\+Game/\textbf{ Chess\+Piece.\+hpp}\item 
+chess\+End\+Game/\textbf{ Chess\+Piece.\+cpp}\end{DoxyCompactItemize}

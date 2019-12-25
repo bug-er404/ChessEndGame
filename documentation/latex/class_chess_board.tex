@@ -1,0 +1,340 @@
+\section{Chess\+Board Class Reference}
+\label{class_chess_board}\index{Chess\+Board@{Chess\+Board}}
+
+
+Singleton Board Class.  
+
+
+
+
+{\ttfamily \#include $<$Chess\+Board.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Chess\+Board} (\textbf{ Position} a\+\_\+white\+Rook, \textbf{ Position} a\+\_\+white\+King, \textbf{ Position} a\+\_\+black\+King)
+\begin{DoxyCompactList}\small\item\em Constructor to initialize a single chessboard. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Chess\+Board} ()
+\begin{DoxyCompactList}\small\item\em Class Deconstructor. \end{DoxyCompactList}\item 
+\textbf{ Chess\+Board} $\ast$ \textbf{ get\+Board} (\textbf{ Chess\+Piece} a\+\_\+piece)
+\begin{DoxyCompactList}\small\item\em Class Accessors. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Piece\+Turn} ()
+\item 
+\textbf{ Chess\+Piece} $\ast$ \textbf{ get\+Piece} (\textbf{ Position} a\+\_\+cell)
+\item 
+\textbf{ Position} \textbf{ get\+Piece\+Position} (\textbf{ Piece\+Color} a\+\_\+color, \textbf{ Piece\+Type} a\+\_\+type)
+\item 
+void \textbf{ set\+Piece} (\textbf{ Position} a\+\_\+cell, \textbf{ Chess\+Piece} $\ast$a\+\_\+piece)
+\begin{DoxyCompactList}\small\item\em Class Mutators. \end{DoxyCompactList}\item 
+int \textbf{ simulate\+Next\+State} ()
+\begin{DoxyCompactList}\small\item\em Next State simulation method -\/ simulates the next state in the chess board. \end{DoxyCompactList}\item 
+void \textbf{ display\+Board} ()
+\begin{DoxyCompactList}\small\item\em Chess board display method. \end{DoxyCompactList}\item 
+void \textbf{ state\+Set\+Piece} (\textbf{ Position} a\+\_\+current, \textbf{ Position} a\+\_\+dest)
+\begin{DoxyCompactList}\small\item\em Sets chess piece for states. \end{DoxyCompactList}\item 
+int \textbf{ corner\+Black\+King} (\textbf{ Chess\+Board} $\ast$a\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Heuristic for minimax algorithm. \end{DoxyCompactList}\item 
+int \textbf{ minimax} (\textbf{ Chess\+Board} $\ast$a\+\_\+node, int a\+\_\+depth, int a\+\_\+alpha, int a\+\_\+beta, bool a\+\_\+color, int \&a\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Implementation of minimax algorithm with alpha beta pruning. \end{DoxyCompactList}\item 
+void \textbf{ write\+Results} (\textbf{ Piece\+Color} a\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Method to write the final results to the result file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ move\+Piece} (bool a\+\_\+piece\+Turn)
+\begin{DoxyCompactList}\small\item\em Move Chess Piece of the passed color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Chess\+Board} $\ast$ \textbf{ m\+\_\+game\+Instance}
+\item 
+\textbf{ Chess\+Piece} $\ast$ \textbf{ m\+\_\+chess\+Grid} [8][8]
+\begin{DoxyCompactList}\small\item\em Chessboard grid where the game is played. \end{DoxyCompactList}\item 
+\textbf{ King\+Piece} $\ast$ \textbf{ m\+\_\+white\+King\+Piece}
+\begin{DoxyCompactList}\small\item\em Chess pieces. \end{DoxyCompactList}\item 
+\textbf{ King\+Piece} $\ast$ \textbf{ m\+\_\+black\+King\+Piece}
+\item 
+\textbf{ Rook\+Piece} $\ast$ \textbf{ m\+\_\+white\+Rook\+Piece}
+\item 
+bool \textbf{ m\+\_\+piece\+Turn} = 1
+\item 
+int \textbf{ count}
+\begin{DoxyCompactList}\small\item\em Counter for number of steps in the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton Board Class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_chess_board_a7e1515e731f1cc05910ecd77ed9ddbfe}} 
+\index{Chess\+Board@{Chess\+Board}!Chess\+Board@{Chess\+Board}}
+\index{Chess\+Board@{Chess\+Board}!Chess\+Board@{Chess\+Board}}
+\subsubsection{Chess\+Board()}
+{\footnotesize\ttfamily Chess\+Board\+::\+Chess\+Board (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+white\+Rook,  }\item[{\textbf{ Position}}]{a\+\_\+white\+King,  }\item[{\textbf{ Position}}]{a\+\_\+black\+King }\end{DoxyParamCaption})}
+
+
+
+Constructor to initialize a single chessboard. 
+
+Constructor for the \doxyref{Chess\+Board}{p.}{class_chess_board} class. Takes position of White Rook, White King, and Black King to construct a Chess board environment. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+white\+Rook} & \doxyref{Position}{p.}{struct_position} Initial position of the White Rook. \\
+\hline
+{\em a\+\_\+white\+King} & \doxyref{Position}{p.}{struct_position} Initial position of the White King. \\
+\hline
+{\em a\+\_\+black\+King} & Initial position of the Black King. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{Rook\+Piece}{p.}{class_rook_piece} and \doxyref{King\+Piece}{p.}{class_king_piece} constructors. 
+\end{DoxySeeAlso}
+\mbox{\label{class_chess_board_acece8633f444b90d7b371b57f52d0780}} 
+\index{Chess\+Board@{Chess\+Board}!````~Chess\+Board@{$\sim$\+Chess\+Board}}
+\index{````~Chess\+Board@{$\sim$\+Chess\+Board}!Chess\+Board@{Chess\+Board}}
+\subsubsection{$\sim$\+Chess\+Board()}
+{\footnotesize\ttfamily Chess\+Board\+::$\sim$\+Chess\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Class Deconstructor. 
+
+\doxyref{Chess\+Board}{p.}{class_chess_board} Class Deconstructor Frees dynamically allocated memory for the players in the game. 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_chess_board_a889a2c4d8162c791898d59df2dcc54b0}} 
+\index{Chess\+Board@{Chess\+Board}!corner\+Black\+King@{corner\+Black\+King}}
+\index{corner\+Black\+King@{corner\+Black\+King}!Chess\+Board@{Chess\+Board}}
+\subsubsection{corner\+Black\+King()}
+{\footnotesize\ttfamily int Chess\+Board\+::corner\+Black\+King (\begin{DoxyParamCaption}\item[{\textbf{ Chess\+Board} $\ast$}]{a\+\_\+node }\end{DoxyParamCaption})}
+
+
+
+Heuristic for minimax algorithm. 
+
+Heuristic method to corner the Black King. Used by the white pieces for the minimax alpha-\/beta pruned algorithm 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+node} & Chess\+Board$\ast$ The current state of the board. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The score for the state according to the heuristics. 
+\end{DoxyReturn}
+\mbox{\label{class_chess_board_af3e74d5a4bc99fc55676c660ce71b60f}} 
+\index{Chess\+Board@{Chess\+Board}!display\+Board@{display\+Board}}
+\index{display\+Board@{display\+Board}!Chess\+Board@{Chess\+Board}}
+\subsubsection{display\+Board()}
+{\footnotesize\ttfamily void Chess\+Board\+::display\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Chess board display method. 
+
+Method to display chess board. Displays the chess board as a character grid. Additionally writes the end game configurations to a text file with the result of the match. \mbox{\label{class_chess_board_ab71c884798ec4694ef363eefd6f5adea}} 
+\index{Chess\+Board@{Chess\+Board}!get\+Board@{get\+Board}}
+\index{get\+Board@{get\+Board}!Chess\+Board@{Chess\+Board}}
+\subsubsection{get\+Board()}
+{\footnotesize\ttfamily \textbf{ Chess\+Board}$\ast$ Chess\+Board\+::get\+Board (\begin{DoxyParamCaption}\item[{\textbf{ Chess\+Piece}}]{a\+\_\+piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Class Accessors. 
+
+\mbox{\label{class_chess_board_a610d3d12ab9cdf0560f533c73a89bef1}} 
+\index{Chess\+Board@{Chess\+Board}!get\+Piece@{get\+Piece}}
+\index{get\+Piece@{get\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{get\+Piece()}
+{\footnotesize\ttfamily \textbf{ Chess\+Piece} $\ast$ Chess\+Board\+::get\+Piece (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+cell }\end{DoxyParamCaption})}
+
+Accessor method to get chess piece on a board position. Gets chess piece at position a\+\_\+cell. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x, y) position of the chess piece. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chess\+Piece$\ast$ \doxyref{Chess\+Piece}{p.}{class_chess_piece} in position (x,y) 
+\end{DoxyReturn}
+\mbox{\label{class_chess_board_a72fd59742d446ada232cf2bf30f1f5bd}} 
+\index{Chess\+Board@{Chess\+Board}!get\+Piece\+Position@{get\+Piece\+Position}}
+\index{get\+Piece\+Position@{get\+Piece\+Position}!Chess\+Board@{Chess\+Board}}
+\subsubsection{get\+Piece\+Position()}
+{\footnotesize\ttfamily \textbf{ Position} Chess\+Board\+::get\+Piece\+Position (\begin{DoxyParamCaption}\item[{\textbf{ Piece\+Color}}]{a\+\_\+color,  }\item[{\textbf{ Piece\+Type}}]{a\+\_\+type }\end{DoxyParamCaption})}
+
+Accessor method to get the possition of a chess piece on the board. Gets position of a particular type and color. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+color} & Piece\+Color The color of the chess piece. \\
+\hline
+{\em a\+\_\+type} & Piece\+Type The type of the chess piece. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Position}{p.}{struct_position} The position of the chess piece. 
+\end{DoxyReturn}
+\mbox{\label{class_chess_board_ab10cc089b3e4504cfe74fb3e6ab9f830}} 
+\index{Chess\+Board@{Chess\+Board}!get\+Piece\+Turn@{get\+Piece\+Turn}}
+\index{get\+Piece\+Turn@{get\+Piece\+Turn}!Chess\+Board@{Chess\+Board}}
+\subsubsection{get\+Piece\+Turn()}
+{\footnotesize\ttfamily bool Chess\+Board\+::get\+Piece\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{class_chess_board_a1a27f7cbe73d1fe3dc3ea79501e8cb25}} 
+\index{Chess\+Board@{Chess\+Board}!minimax@{minimax}}
+\index{minimax@{minimax}!Chess\+Board@{Chess\+Board}}
+\subsubsection{minimax()}
+{\footnotesize\ttfamily int Chess\+Board\+::minimax (\begin{DoxyParamCaption}\item[{\textbf{ Chess\+Board} $\ast$}]{a\+\_\+node,  }\item[{int}]{a\+\_\+depth,  }\item[{int}]{a\+\_\+alpha,  }\item[{int}]{a\+\_\+beta,  }\item[{bool}]{a\+\_\+color,  }\item[{int \&}]{a\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Implementation of minimax algorithm with alpha beta pruning. 
+
+Minimax algorithm implementation with alpha beta pruning. Used by white pieces to get the optimal next move. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+node} & Chess\+Board$\ast$ The current state of the board. \\
+\hline
+{\em a\+\_\+depth} & int The depth to search for the optimal state. \\
+\hline
+{\em a\+\_\+alpha} & int alpha cut off. \\
+\hline
+{\em a\+\_\+beta} & int beta cut off. \\
+\hline
+{\em a\+\_\+color} & bool The current piece color \\
+\hline
+{\em a\+\_\+count} & int Counter for the number of states \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The score for the state according to the heuristics. 
+\end{DoxyReturn}
+\mbox{\label{class_chess_board_a98c46e36d99053d46de330f94f72716f}} 
+\index{Chess\+Board@{Chess\+Board}!move\+Piece@{move\+Piece}}
+\index{move\+Piece@{move\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{move\+Piece()}
+{\footnotesize\ttfamily void Chess\+Board\+::move\+Piece (\begin{DoxyParamCaption}\item[{bool}]{a\+\_\+piece\+Turn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Move Chess Piece of the passed color. 
+
+\mbox{\label{class_chess_board_a427021f34895ac47cb6ba8aacf921663}} 
+\index{Chess\+Board@{Chess\+Board}!set\+Piece@{set\+Piece}}
+\index{set\+Piece@{set\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{set\+Piece()}
+{\footnotesize\ttfamily void Chess\+Board\+::set\+Piece (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+cell,  }\item[{\textbf{ Chess\+Piece} $\ast$}]{a\+\_\+piece }\end{DoxyParamCaption})}
+
+
+
+Class Mutators. 
+
+Mutator method to set chess piece on a board position. Sets chess piece a\+\_\+piece at position (x,y). 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x, y) position to put the chess piece. \\
+\hline
+{\em a\+\_\+piece} & Chess\+Piece$\ast$ Agent to place in position (x,y) \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chess_board_a6d0ddb591893d37452d5c3b90efab4da}} 
+\index{Chess\+Board@{Chess\+Board}!simulate\+Next\+State@{simulate\+Next\+State}}
+\index{simulate\+Next\+State@{simulate\+Next\+State}!Chess\+Board@{Chess\+Board}}
+\subsubsection{simulate\+Next\+State()}
+{\footnotesize\ttfamily int Chess\+Board\+::simulate\+Next\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Next State simulation method -\/ simulates the next state in the chess board. 
+
+Next State simulation method. Simulates the next state on the chess board. \begin{DoxyReturn}{Returns}
+int Returns 1 when the game ends due to checkmate and 2 when draw. 0 when in progress. 
+\end{DoxyReturn}
+\mbox{\label{class_chess_board_aab31a05caf521f36ae6d0a726b6fe13e}} 
+\index{Chess\+Board@{Chess\+Board}!state\+Set\+Piece@{state\+Set\+Piece}}
+\index{state\+Set\+Piece@{state\+Set\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{state\+Set\+Piece()}
+{\footnotesize\ttfamily void Chess\+Board\+::state\+Set\+Piece (\begin{DoxyParamCaption}\item[{\textbf{ Position}}]{a\+\_\+current,  }\item[{\textbf{ Position}}]{a\+\_\+dest }\end{DoxyParamCaption})}
+
+
+
+Sets chess piece for states. 
+
+Method to create states for minimax and greedy algorithn. Sets chess piece for the states created from current position to destination position. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+current} & \doxyref{Position}{p.}{struct_position} Current position of the piece \\
+\hline
+{\em a\+\_\+dest} & \doxyref{Position}{p.}{struct_position} Destination position of the piece \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_chess_board_a92c39020cf378c89590883e943cb7131}} 
+\index{Chess\+Board@{Chess\+Board}!write\+Results@{write\+Results}}
+\index{write\+Results@{write\+Results}!Chess\+Board@{Chess\+Board}}
+\subsubsection{write\+Results()}
+{\footnotesize\ttfamily void Chess\+Board\+::write\+Results (\begin{DoxyParamCaption}\item[{\textbf{ Piece\+Color}}]{a\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Method to write the final results to the result file. 
+
+Method to write the end game configurations to a target file. Writes the piece position, the outcome of the game and the statistics of the game. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+type} & The color who won the game. Black color signifies a draw. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_chess_board_a41517b6a4f2136639dc42f047da069ef}} 
+\index{Chess\+Board@{Chess\+Board}!count@{count}}
+\index{count@{count}!Chess\+Board@{Chess\+Board}}
+\subsubsection{count}
+{\footnotesize\ttfamily int Chess\+Board\+::count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Counter for number of steps in the game. 
+
+\mbox{\label{class_chess_board_ab4d77245ab3d6e35caa3dfff55354096}} 
+\index{Chess\+Board@{Chess\+Board}!m\+\_\+black\+King\+Piece@{m\+\_\+black\+King\+Piece}}
+\index{m\+\_\+black\+King\+Piece@{m\+\_\+black\+King\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{m\+\_\+black\+King\+Piece}
+{\footnotesize\ttfamily \textbf{ King\+Piece}$\ast$ Chess\+Board\+::m\+\_\+black\+King\+Piece\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_chess_board_aef98e86c15b207f04d7d275773753c71}} 
+\index{Chess\+Board@{Chess\+Board}!m\+\_\+chess\+Grid@{m\+\_\+chess\+Grid}}
+\index{m\+\_\+chess\+Grid@{m\+\_\+chess\+Grid}!Chess\+Board@{Chess\+Board}}
+\subsubsection{m\+\_\+chess\+Grid}
+{\footnotesize\ttfamily \textbf{ Chess\+Piece}$\ast$ Chess\+Board\+::m\+\_\+chess\+Grid[8][8]\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Chessboard grid where the game is played. 
+
+\mbox{\label{class_chess_board_aaa31b798b70fa50d3469939d9acd0924}} 
+\index{Chess\+Board@{Chess\+Board}!m\+\_\+game\+Instance@{m\+\_\+game\+Instance}}
+\index{m\+\_\+game\+Instance@{m\+\_\+game\+Instance}!Chess\+Board@{Chess\+Board}}
+\subsubsection{m\+\_\+game\+Instance}
+{\footnotesize\ttfamily \textbf{ Chess\+Board}$\ast$ Chess\+Board\+::m\+\_\+game\+Instance\hspace{0.3cm}{\ttfamily [private]}}
+
+C\+H\+E\+SS G\+A\+ME V\+A\+R\+I\+A\+B\+L\+ES\+: Variable to hold the game instance. \mbox{\label{class_chess_board_aa553379321272c4fee083a23a78a85c1}} 
+\index{Chess\+Board@{Chess\+Board}!m\+\_\+piece\+Turn@{m\+\_\+piece\+Turn}}
+\index{m\+\_\+piece\+Turn@{m\+\_\+piece\+Turn}!Chess\+Board@{Chess\+Board}}
+\subsubsection{m\+\_\+piece\+Turn}
+{\footnotesize\ttfamily bool Chess\+Board\+::m\+\_\+piece\+Turn = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+Bool to hold color turn 1 for White and 0 for Black. Game starts with white\textquotesingle{}s move. \mbox{\label{class_chess_board_a97a4f8f8af24f24d2975d69fbe8f9834}} 
+\index{Chess\+Board@{Chess\+Board}!m\+\_\+white\+King\+Piece@{m\+\_\+white\+King\+Piece}}
+\index{m\+\_\+white\+King\+Piece@{m\+\_\+white\+King\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{m\+\_\+white\+King\+Piece}
+{\footnotesize\ttfamily \textbf{ King\+Piece}$\ast$ Chess\+Board\+::m\+\_\+white\+King\+Piece\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Chess pieces. 
+
+\mbox{\label{class_chess_board_a43776b52aa4db67366b70c7dd369a97d}} 
+\index{Chess\+Board@{Chess\+Board}!m\+\_\+white\+Rook\+Piece@{m\+\_\+white\+Rook\+Piece}}
+\index{m\+\_\+white\+Rook\+Piece@{m\+\_\+white\+Rook\+Piece}!Chess\+Board@{Chess\+Board}}
+\subsubsection{m\+\_\+white\+Rook\+Piece}
+{\footnotesize\ttfamily \textbf{ Rook\+Piece}$\ast$ Chess\+Board\+::m\+\_\+white\+Rook\+Piece\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+chess\+End\+Game/\textbf{ Chess\+Board.\+hpp}\item 
+chess\+End\+Game/\textbf{ Chess\+Board.\+cpp}\end{DoxyCompactItemize}

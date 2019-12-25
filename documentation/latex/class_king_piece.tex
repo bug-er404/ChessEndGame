@@ -1,0 +1,161 @@
+\section{King\+Piece Class Reference}
+\label{class_king_piece}\index{King\+Piece@{King\+Piece}}
+
+
+{\ttfamily \#include $<$King\+Piece.\+hpp$>$}
+
+Inheritance diagram for King\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_king_piece}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ King\+Piece} (class \textbf{ Chess\+Board} $\ast$a\+\_\+board, \textbf{ Position} a\+\_\+cell, \textbf{ Piece\+Color} a\+\_\+piece\+Color)
+\begin{DoxyCompactList}\small\item\em King Piece Constructor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+King\+Piece} ()
+\begin{DoxyCompactList}\small\item\em King Piece Desstructor. \end{DoxyCompactList}\item 
+int \textbf{ move\+Piece} ()
+\begin{DoxyCompactList}\small\item\em Overloaded move method to move King piece. \end{DoxyCompactList}\item 
+\textbf{ Piece\+Type} \textbf{ get\+Piece\+Type} ()
+\begin{DoxyCompactList}\small\item\em Return piece type. \end{DoxyCompactList}\item 
+char \textbf{ piece\+Char\+Code} ()
+\begin{DoxyCompactList}\small\item\em Return character representation of the king chess piece. \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Position} $>$ \textbf{ get\+Possible\+Moves} ()
+\begin{DoxyCompactList}\small\item\em Get possible moves for the king piece. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ distance\+To\+Rook} (std\+::vector$<$ \textbf{ Position} $>$ a\+\_\+possible\+Moves, \textbf{ Position} a\+\_\+pos\+Rook, \textbf{ Position} a\+\_\+pos\+King)
+\begin{DoxyCompactList}\small\item\em Greedy method for Black King Piece to get the distance to the White Rook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{King\+Piece.\+hpp}{p.}{_king_piece_8hpp} \doxyref{King\+Piece}{p.}{class_king_piece} class. Inherits from \doxyref{Chess\+Piece}{p.}{class_chess_piece} class. Chess End Game Configurations.
+
+Created by Salil Maharjan on 11/27/19. Copyright © 2019 Salil Maharjan. All rights reserved. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_king_piece_afdd17637b739f79dc14215c31199d780}} 
+\index{King\+Piece@{King\+Piece}!King\+Piece@{King\+Piece}}
+\index{King\+Piece@{King\+Piece}!King\+Piece@{King\+Piece}}
+\subsubsection{King\+Piece()}
+{\footnotesize\ttfamily King\+Piece\+::\+King\+Piece (\begin{DoxyParamCaption}\item[{class \textbf{ Chess\+Board} $\ast$}]{a\+\_\+board,  }\item[{\textbf{ Position}}]{a\+\_\+cell,  }\item[{\textbf{ Piece\+Color}}]{a\+\_\+piece\+Color }\end{DoxyParamCaption})}
+
+
+
+King Piece Constructor. 
+
+\doxyref{King\+Piece.\+cpp}{p.}{_king_piece_8cpp} Implements \doxyref{King\+Piece.\+hpp}{p.}{_king_piece_8hpp} class. Chess End Game
+
+Created by Salil Maharjan on 11/27/19. Copyright © 2019 Salil Maharjan. All rights reserved. King Piece class constructor. Constructor\+: Creates a \doxyref{King\+Piece}{p.}{class_king_piece} in a\+\_\+board chess board at cell position a\+\_\+cell. Calls \doxyref{Chess\+Piece}{p.}{class_chess_piece} constructor to construct a chesspiece. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+board} & Chess\+Board$\ast$ \doxyref{Chess\+Board}{p.}{class_chess_board} where the game is being played. \\
+\hline
+{\em a\+\_\+cell} & \doxyref{Position}{p.}{struct_position} (x,y) position to place king piece. \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_king_piece_aae4567eac4bf9e4657215ca035271f76}} 
+\index{King\+Piece@{King\+Piece}!````~King\+Piece@{$\sim$\+King\+Piece}}
+\index{````~King\+Piece@{$\sim$\+King\+Piece}!King\+Piece@{King\+Piece}}
+\subsubsection{$\sim$\+King\+Piece()}
+{\footnotesize\ttfamily King\+Piece\+::$\sim$\+King\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+King Piece Desstructor. 
+
+King Piece class destructor. Destructor\+: Destroys the \doxyref{King\+Piece}{p.}{class_king_piece} from the board. 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_king_piece_a870c6bd42cf54b5e6c75044a8ffe7887}} 
+\index{King\+Piece@{King\+Piece}!distance\+To\+Rook@{distance\+To\+Rook}}
+\index{distance\+To\+Rook@{distance\+To\+Rook}!King\+Piece@{King\+Piece}}
+\subsubsection{distance\+To\+Rook()}
+{\footnotesize\ttfamily int King\+Piece\+::distance\+To\+Rook (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Position} $>$}]{a\+\_\+possible\+Moves,  }\item[{\textbf{ Position}}]{a\+\_\+pos\+Rook,  }\item[{\textbf{ Position}}]{a\+\_\+pos\+King }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Greedy method for Black King Piece to get the distance to the White Rook. 
+
+Greedy method for the Black King Piece. Used as a heuristic to select Black King move. Gets the distance from the Black King Piece to the White Rook Piece. Checks the minimum horizontal, vertical and diagonal distance, which is calculated using Euclidean distance, from the proposed position to the White Rook to get as close to it as possible. Also, as an improvement, checks the distance from the white king to see if there is a move so that it will get the Black Piece closer to the White Rook and away from the White King. At the end, the next move is chosen with the choice that has the most valid moves between the Rook\+Min\+Distance and King\+Max\+Distance. Priority given to getting close to the rook. So that it can eventually capture it without being on a check. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+pos\+Rook} & \doxyref{Position}{p.}{struct_position} The position of the White Rook. \\
+\hline
+{\em a\+\_\+pos\+King} & Possition The position of the White King. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The index of the best posssible move according to this greedy algorithm. 
+\end{DoxyReturn}
+\mbox{\label{class_king_piece_adf72b70a58939abb97041bf371184d59}} 
+\index{King\+Piece@{King\+Piece}!get\+Piece\+Type@{get\+Piece\+Type}}
+\index{get\+Piece\+Type@{get\+Piece\+Type}!King\+Piece@{King\+Piece}}
+\subsubsection{get\+Piece\+Type()}
+{\footnotesize\ttfamily \textbf{ Piece\+Type} King\+Piece\+::get\+Piece\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return piece type. 
+
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_a3a0ae30c47fe6be0ed12859451a1e3f5}.
+
+\mbox{\label{class_king_piece_ab1fc242e9d0c3bcace67a6839bf68cbd}} 
+\index{King\+Piece@{King\+Piece}!get\+Possible\+Moves@{get\+Possible\+Moves}}
+\index{get\+Possible\+Moves@{get\+Possible\+Moves}!King\+Piece@{King\+Piece}}
+\subsubsection{get\+Possible\+Moves()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Position} $>$ King\+Piece\+::get\+Possible\+Moves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get possible moves for the king piece. 
+
+Method to get possible moves for a King Piece. \begin{DoxyReturn}{Returns}
+vector$<$\+Position$>$ Array of possible positions the King piece can make a valid move to. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_a62e65eef509393e96e6122fd63e2915b}.
+
+\mbox{\label{class_king_piece_a7c09258f545c61ad5323a14794f9eb66}} 
+\index{King\+Piece@{King\+Piece}!move\+Piece@{move\+Piece}}
+\index{move\+Piece@{move\+Piece}!King\+Piece@{King\+Piece}}
+\subsubsection{move\+Piece()}
+{\footnotesize\ttfamily int King\+Piece\+::move\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Overloaded move method to move King piece. 
+
+Move method for King Piece. Overloaded move method to move King piece. \begin{DoxyReturn}{Returns}
+int Returns 1 when the game ends due to checkmate and 2 when draw. 0 when in progress. 
+\end{DoxyReturn}
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_aeed547e002595651caf20655a384d6e5}.
+
+\mbox{\label{class_king_piece_af2bd66f1e7b5b8ab6ac29f930ea5e1fa}} 
+\index{King\+Piece@{King\+Piece}!piece\+Char\+Code@{piece\+Char\+Code}}
+\index{piece\+Char\+Code@{piece\+Char\+Code}!King\+Piece@{King\+Piece}}
+\subsubsection{piece\+Char\+Code()}
+{\footnotesize\ttfamily char King\+Piece\+::piece\+Char\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return character representation of the king chess piece. 
+
+
+
+Implements \textbf{ Chess\+Piece} \doxyref{}{p.}{class_chess_piece_ae07add53743a1fc66cdc92373d2dfe25}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+chess\+End\+Game/\textbf{ King\+Piece.\+hpp}\item 
+chess\+End\+Game/\textbf{ King\+Piece.\+cpp}\end{DoxyCompactItemize}
