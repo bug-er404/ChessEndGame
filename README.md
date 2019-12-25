@@ -19,5 +19,7 @@ A sample of the data collected with various game configurations is shown in the 
 | d,1, a,8, h,1 | White win | 30 | 54 | 202082 |
 | d,2, d,3, c,6 | Draw | 50 | 154 | 686688 |
 
+50-move rule is considered, which ends the game in a draw.
+
 
 MakeFile and Doxygen generated documentation included.
