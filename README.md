@@ -8,6 +8,7 @@ The initial game configuration is read and constructed using a file named “ini
 The final results file, which is named “Maharjan-game.data”, the end game configuration and the result of the match as win, draw or loss is recorded.
 
 A sample of the data collected with various game configurations is shown in the table below:
+
 | Initial Configuration | Outcome | Total game steps | Greedy algorithm states visited | Minimax states visited |
 | :-------------------: | :------:| :---------------: | :-----------------------------: | :----------------------: |
 | a,1, a,2, a,7 | White Win | 1 | 0 | 3088 |
@@ -17,3 +18,9 @@ A sample of the data collected with various game configurations is shown in the 
 | a,1, c,2, d,2 | White win | 1 | 0 | 2453 |
 | d,1, a,8, h,1 | White win | 30 | 54 | 202082 |
 | d,2, d,3, c,6 | Draw | 50 | 154 | 686688 |
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
